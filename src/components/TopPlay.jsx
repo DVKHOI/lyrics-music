@@ -61,10 +61,9 @@ const TopPlay = () => {
     divRef.current.scrollIntoView({ behavior: "smooth" });
   });
 
-  // const newData = data.filter((datas) => datas.artists !== undefined);
-  // console.log("🚀 ~ file: TopPlay.jsx:65 ~ TopPlay ~ newData", newData);
+  const datas = data?.filter((d) => d.artists?.length > 0);
 
-  const topPlays = data?.slice(0, 4);
+  const topPlays = datas?.slice(0, 5);
 
   const handlePauseClick = () => {
     dispatch(playPause(false));
